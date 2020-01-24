@@ -12,7 +12,10 @@ body {
 
 h1 {
   font-style: italic;
-  color: #373fff;
+  color: orange;
+  font-size: 28px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .bold {
@@ -68,4 +71,20 @@ footer {
   margin-top: 50px;
   padding-top: 25px;
   border-top: 1px solid lightgrey;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fcccfc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #50C5B7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4DBAAD;
+  opacity: 1;
 }

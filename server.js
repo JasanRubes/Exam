@@ -13,10 +13,21 @@ app.use(express.static("public"));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function(request, response) {
-  response.sendFile(__dirname + "/views/index.html");
+  response.sendFile(__dirname + "/views/home.html");
 });
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
   console.log("Your app is listening on port " + listener.address().port);
+});
+app.get("/home.html", function(request, response) {
+  response.sendFile(__dirname + "/views/home.html");
+});
+
+app.get("/index.html", function(request, response) {
+  response.sendFile(__dirname + "/views/index.html");
+});
+
+app.get("/login.html", function(request, response) {
+  response.sendFile(__dirname + "/views/login.html");
 });

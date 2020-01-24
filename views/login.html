@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Exam</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/script.js" defer></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <a class="navbar-brand" href="#"> Bootstrap</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Play</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Survey</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <p class="h1">
+      First, who would you compare yourself to?
+    </p>
+    <img
+      id="myImage"
+      src="https://hottopic.scene7.com/is/image/HotTopic/10661496_hi?$pdp_hero_standard$"
+      style="width:100px"
+    />
+
+    <button
+      onclick="document.getElementById('myImage').src='https://vignette.wikia.nocookie.net/starwars/images/9/9d/Droideka-SWE.png/revision/latest?cb=20160910210418'"
+    >
+      Droideka, evil but the real deal
+    </button>
+    <button
+      onclick="document.getElementById('myImage').src='https://images-na.ssl-images-amazon.com/images/I/71LFpKcZjGL._SY879_.jpg'"
+    >
+      C3PO, the genius
+    </button>
+    <button
+      onclick="document.getElementById('myImage').src='https://images-na.ssl-images-amazon.com/images/I/91BLCCISDTL._SY355_.jpg'"
+    >
+      R2D2, the babe
+    </button>
+    <button
+      onclick="document.getElementById('myImage').src='https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/6101047622218'"
+    >
+      BB8, the dumb sphere who rolls around
+    </button>
+
+    <p class="h1">
+      Which of the colours of my website were most annoying?
+    </p>
+    <button
+      type="button"
+      onclick='document.getElementById("aa").innerHTML = "a weak minded, more like weak eyes"'
+    >
+      Green
+    </button>
+    <button
+      type="button"
+      onclick='document.getElementById("aa").innerHTML = "no personality wait was their even brown?"'
+    >
+      Brown
+    </button>
+    <button
+      type="button"
+      onclick='document.getElementById("aa").innerHTML = "bad eyes it was navy not blue"'
+    >
+      Blue
+    </button>
+    <button
+      type="button"
+      onclick='document.getElementById("aa").innerHTML = "a fair point"'
+    >
+      Orange
+    </button>
+
+          <p class="h1">
+            Feedback for you, because why not. You have:
+          </p>
+
+          <p id="aa">
+            _______
+          </p>
+
+
+    <button onclick="alert1();">
+      <a href="index.html">Click for help</a>
+    </button>
+  </body>
+</html>
