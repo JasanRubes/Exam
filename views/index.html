@@ -2,6 +2,33 @@
 
 <html>
   <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/script.js" defer></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
     <meta charset="utf-8" />
 
     <title>Gamedev Canvas Workshop - lesson 10: finishing up</title>
@@ -25,30 +52,54 @@
   </head>
 
   <body>
-    <canvas id="myCanvas" width="480" height="320"></canvas>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <a class="navbar-brand" href="#"> Exam</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Play</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Survey</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <canvas id="myCanvas" width="960" height="640"></canvas>
 
     <script>
       var canvas = document.getElementById("myCanvas");
       var ctx = canvas.getContext("2d");
-      var ballRadius = 10;
+      var ballRadius = 20;
       var x = canvas.width / 2;
       var y = canvas.height - 30;
       var dx = 2;
       var dy = -2;
-      var paddleHeight = 10;
-      var paddleWidth = 75;
+      var paddleHeight = 20;
+      var paddleWidth = 150;
       var paddleX = (canvas.width - paddleWidth) / 2;
       var rightPressed = false;
       var leftPressed = false;
       var brickRowCount = 5;
-      var brickColumnCount = 3;
-      var brickWidth = 75;
-      var brickHeight = 20;
-      var brickPadding = 10;
-      var brickOffsetTop = 30;
-      var brickOffsetLeft = 30;
+      var brickColumnCount = 5;
+      var brickWidth = 150;
+      var brickHeight = 40;
+      var brickPadding = 20;
+      var brickOffsetTop = 60;
+      var brickOffsetLeft = 60;
       var score = 0;
-      var lives = 3;
+      var lives = 1;
 
       var bricks = [];
       for (var c = 0; c < brickColumnCount; c++) {
@@ -97,7 +148,7 @@
                 b.status = 0;
                 score++;
                 if (score == brickRowCount * brickColumnCount) {
-                  alert("YOU WIN, CONGRATS!");
+                  alert("I guess you won, congrats, i, um, guess");
                   document.location.reload();
                 }
               }
@@ -107,8 +158,8 @@
       }
       function drawBall() {
         ctx.beginPath();
-        ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-        ctx.fillStyle = "#0095DD";
+        ctx.arc(x, y, ballRadius, 0, Math.PI * 1.5);
+        ctx.fillStyle = "orange";
         ctx.fill();
         ctx.closePath();
       }
@@ -120,7 +171,7 @@
           paddleWidth,
           paddleHeight
         );
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "green";
         ctx.fill();
         ctx.closePath();
       }
@@ -134,7 +185,7 @@
               bricks[c][r].y = brickY;
               ctx.beginPath();
               ctx.rect(brickX, brickY, brickWidth, brickHeight);
-              ctx.fillStyle = "#0095DD";
+              ctx.fillStyle = "limegreen";
               ctx.fill();
               ctx.closePath();
             }
@@ -143,12 +194,12 @@
       }
       function drawScore() {
         ctx.font = "16px Arial";
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "navy";
         ctx.fillText("Score: " + score, 8, 20);
       }
       function drawLives() {
         ctx.font = "16px Arial";
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "navy";
         ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
       }
       function draw() {
@@ -171,7 +222,7 @@
           } else {
             lives--;
             if (!lives) {
-              alert("GAME OVER");
+              alert("sorry but you should get some lessons and learn how to play because that was garbage");
               document.location.reload();
             } else {
               x = canvas.width / 2;
@@ -194,5 +245,32 @@
       }
       draw();
     </script>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12" style="background-color:lightgreen;">
+          hey Jeff, where did that part of the ball go?
+        </div>
+        <div class="col-sm-12" style="background-color:orange;">
+          Sorry phill, i got hungry and thought it was an orange.
+        </div>
+        <div class="col-sm-12" style="background-color:lightgreen;">
+          hey Jeff if you win you are going to be reincarnated as the ape on the right, but if you lose you will be reincarnated as the baby on the left
+        </div>
+      </div>
+    </div>
+     <div class="row">
+      <div class="col-6">
+        <img
+          src="https://s3.amazonaws.com/spectrumnews-web-assets/wp-content/uploads/2018/11/13154625/20181112-SHANK3monkey-844.jpg"
+          alt="Monkey"
+        />
+      </div>
+      <div class="col-6">
+        <img
+          src="https://i.pinimg.com/originals/bf/45/21/bf4521a45d49d36cf590507daf780327.jpg"
+          alt="Monkey"
+        />
+      </div>
+    </div>
   </body>
 </html>
